@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f6f5f7;
+  height: 100vh;
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// common classes
+.mt5 {
+  margin-top: 5px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.flex.two-column {
+  display: flex;
+  gap: 10px;
+}
+
+.mat-mdc-form-field-error-wrapper {
+  padding: 0 !important;
+}

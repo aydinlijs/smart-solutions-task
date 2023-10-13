@@ -1,0 +1,128 @@
+<div class="login-page">
+  <div
+    class="container"
+    [ngClass]="{ 'right-panel-active': isSignUp }"
+    id="container"
+  >
+    <div class="form-container sign-up-container">
+      <form [formGroup]="form">
+        <h1>Create Account</h1>
+        <div class="flex two-column mt10">
+          <div class="field-container">
+            <input
+              type="text"
+              placeholder="First name"
+              formControlName="firstName"
+            />
+            <app-validation-message
+              [showError]="submitted"
+              [ctrl]="formControls.firstName"
+            ></app-validation-message>
+          </div>
+          <div class="field-container">
+            <input
+              type="text"
+              placeholder="Last name"
+              formControlName="lastName"
+            />
+            <app-validation-message
+              [showError]="submitted"
+              [ctrl]="formControls.lastName"
+            ></app-validation-message>
+          </div>
+        </div>
+
+        <div class="field-container">
+          <input
+            type="text"
+            placeholder="Organization name"
+            formControlName="orgName"
+          />
+          <app-validation-message
+            [showError]="submitted"
+            [ctrl]="formControls.orgName"
+          ></app-validation-message>
+        </div>
+
+        <div class="field-container">
+          <input
+            type="text"
+            placeholder="Phone number"
+            formControlName="phoneNumber"
+          />
+          <app-validation-message
+            [showError]="submitted"
+            [ctrl]="formControls.phoneNumber"
+          ></app-validation-message>
+        </div>
+
+        <div class="field-container">
+          <input type="text" placeholder="Address" formControlName="address" />
+          <app-validation-message
+            [showError]="submitted"
+            [ctrl]="formControls.address"
+          ></app-validation-message>
+        </div>
+
+        <div class="field-container">
+          <input type="email" placeholder="Email" formControlName="email" />
+          <app-validation-message
+            [showError]="submitted"
+            [ctrl]="formControls.email"
+          ></app-validation-message>
+        </div>
+
+        <div class="field-container">
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <app-validation-message
+            [showError]="submitted"
+            [ctrl]="formControls.password"
+          ></app-validation-message>
+        </div>
+
+        <button class="mt10 pointer" (click)="signUp($event)">Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="#">
+        <h1>Sign in</h1>
+        <span>-</span>
+        <input
+          name="email"
+          [(ngModel)]="email"
+          type="email"
+          placeholder="Email"
+        />
+        <input
+          name="password"
+          [(ngModel)]="password"
+          type="password"
+          placeholder="Password"
+        />
+        <button (click)="signIn($event)" class="mt10 pointer">Sign In</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button (click)="toggleView()" class="ghost pointer" id="signIn">
+            Sign In
+          </button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and get back to business</p>
+          <button (click)="toggleView()" class="ghost pointer" id="signUp">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

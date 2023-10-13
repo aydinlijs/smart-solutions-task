@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "smart-solutions-task",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

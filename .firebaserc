@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "smart-solutions-task": {
+      "hosting": {
+        "smart-solutions-task": [
+          "smart-solutions-task"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "smart-solutions-task"
+  }
+}

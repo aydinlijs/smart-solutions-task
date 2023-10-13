@@ -1,0 +1,106 @@
+<div
+  class="modal fade"
+  id="userModal"
+  #modalRef
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Create User</h2>
+      </div>
+      <div class="modal-body">
+        <form autocomplete="off" [formGroup]="form" class="w-100">
+          <div class="row flex two-column mb-4">
+            <mat-form-field class="w100">
+              <input
+                matInput
+                placeholder="Name"
+                formControlName="firstName"
+                required
+              />
+              <mat-error *ngIf="formControls.firstName.invalid">{{
+                getErrorMessage("firstName")
+              }}</mat-error>
+            </mat-form-field>
+            <mat-form-field class="w100">
+              <input
+                matInput
+                placeholder="Surname"
+                formControlName="lastName"
+                required
+              />
+              <mat-error *ngIf="formControls.lastName.invalid">{{
+                getErrorMessage("lastName")
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-12">
+              <mat-form-field class="w100">
+                <input
+                  matInput
+                  placeholder="Email"
+                  formControlName="email"
+                  required
+                />
+                <mat-error *ngIf="formControls.email.invalid">{{
+                  getErrorMessage("email")
+                }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-12">
+              <mat-form-field class="w100">
+                <input
+                  matInput
+                  [type]="hide ? 'password' : 'text'"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+                <mat-error *ngIf="formControls.password.invalid">{{
+                  getErrorMessage("password")
+                }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button
+          type="button"
+          mat-flat-button
+          color="warn"
+          (click)="close()"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          mat-flat-button
+          color="primary"
+          class="btn btn-primary"
+          (click)="save()"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

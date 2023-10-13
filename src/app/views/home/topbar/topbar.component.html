@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <span class="user-email">{{ userEmail }}</span>
+  <button mat-icon-button [matMenuTriggerFor]="userMenu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+</mat-toolbar>
